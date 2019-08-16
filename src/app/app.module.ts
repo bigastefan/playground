@@ -11,6 +11,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { ExerciseModalComponent } from './components/modals/exercise-modal/exercise-modal.component';
 
 import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { LayoutState } from './store/layout-store/layout-state';
 import { ExerciseState } from './store/exercise-store/exercise-state';
 
@@ -29,7 +30,8 @@ import { ExerciseState } from './store/exercise-store/exercise-state';
     NgxsModule.forRoot([
       LayoutState,
       ExerciseState
-    ])
+    ]),
+    NgxsReduxDevtoolsPluginModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
