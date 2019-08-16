@@ -1,8 +1,10 @@
 <div>
+  <h4>Notification Center</h4>
   <div *ngFor="let b of bubbles">
     <p>{{b.content}}</p>
   </div>
   <div>
-    <button (click)="addBubble()">+</button>
+    <h5>Post Notification</h5>
+    <button (click)="addBubble()">POST</button>
   </div>
 </div>
