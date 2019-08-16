@@ -14,13 +14,16 @@ import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { LayoutState } from './store/layout-store/layout-state';
 import { ExerciseState } from './store/exercise-store/exercise-state';
+import { BubbleComponent } from './components/building-blocks/bubbles/bubble/bubble.component';
+import { BubbleState } from './store/bubble-store/bubble-state';
 
 @NgModule({
   declarations: [
     AppComponent,
     DragableComponent,
     DashboardComponent,
-    ExerciseModalComponent
+    ExerciseModalComponent,
+    BubbleComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { ExerciseState } from './store/exercise-store/exercise-state';
     AppRoutingModule,
     NgxsModule.forRoot([
       LayoutState,
-      ExerciseState
+      ExerciseState,
+      BubbleState
     ]),
     NgxsReduxDevtoolsPluginModule.forRoot()
   ],
