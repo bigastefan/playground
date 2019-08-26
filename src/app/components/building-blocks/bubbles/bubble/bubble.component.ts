@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Bubble } from 'src/app/models/bubble';
 import { Store } from '@ngxs/store';
-import { AddBubble } from 'src/app/store/bubble-store/bubble-actions';
+import { AddBubble, DeleteBubble } from 'src/app/store/bubble-store/bubble-actions';
 import { RootState } from 'src/app/store/rootstate';
 
 @Component({
@@ -25,6 +25,10 @@ export class BubbleComponent implements OnInit {
 
   addBubble() {
     this.store.dispatch(new AddBubble(this.b1));
+  }
+
+  deleteBubble(bubble: Bubble) {
+    this.store.dispatch(new DeleteBubble(bubble));
   }
 
 }

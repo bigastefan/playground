@@ -5,3 +5,9 @@ export class AddBubble {
 
   constructor(public bubble: Bubble) {}
 }
+
+export class DeleteBubble {
+  static readonly type = '[bubble] DeleteBubble';
+
+  constructor(public bubble: Bubble) {}
+}
