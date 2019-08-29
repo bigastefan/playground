@@ -26,11 +26,10 @@ export class ExerciseState {
   @Action(AddExercise)
   addExercise({ getState, patchState }: StateContext<ExerciseStateModel>, { exercise }: AddExercise) {
     const exercises = getState().selectedExercise;
-    console.log(exercises);
+
     patchState({
       selectedExercise: [...exercises, exercise]
     });
-    console.log(exercises);
   }
 }
 

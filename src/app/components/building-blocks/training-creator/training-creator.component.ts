@@ -5,6 +5,7 @@ import { Store } from '@ngxs/store';
 import { AddBubble } from 'src/app/store/bubble-store/bubble-actions';
 import { Exercise } from 'src/app/models/exercise';
 import { AddExercise } from 'src/app/store/exercise-store/exercise-actions';
+import { RootState } from 'src/app/store/rootstate';
 
 @Component({
   selector: 'app-training-creator',
@@ -25,6 +26,9 @@ export class TrainingCreatorComponent implements OnInit {
   onSubmit() {
     const b = new Exercise(123, this.profileForm.value.content, this.profileForm.value.content);
     this.store.dispatch(new AddExercise(b));
+    this.store.select((root: RootState) => root.exercise.selectedExercise).subscribe((data) => {
+      console.log(data);
+    });
   }
 
 }
