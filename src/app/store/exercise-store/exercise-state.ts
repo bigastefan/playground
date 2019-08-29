@@ -1,5 +1,5 @@
 import { State, Action, StateContext } from '@ngxs/store';
-import { SelectExercise } from './exercise-actions';
+import { SelectExercise, AddExercise } from './exercise-actions';
 import { Exercise } from 'src/app/models/exercise';
 
 export class ExerciseStateModel {
@@ -21,6 +21,16 @@ export class ExerciseState {
       selectedExercise: [exercise]
     });
 
+  }
+
+  @Action(AddExercise)
+  addExercise({ getState, patchState }: StateContext<ExerciseStateModel>, { exercise }: AddExercise) {
+    const exercises = getState().selectedExercise;
+    console.log(exercises);
+    patchState({
+      selectedExercise: [...exercises, exercise]
+    });
+    console.log(exercises);
   }
 }
 

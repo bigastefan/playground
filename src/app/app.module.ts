@@ -18,6 +18,8 @@ import { BubbleComponent } from './components/building-blocks/bubbles/bubble/bub
 import { BubbleState } from './store/bubble-store/bubble-state';
 import { environment } from 'src/environments/environment.prod';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TrainingCreatorComponent } from './components/building-blocks/training-creator/training-creator.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     DragableComponent,
     DashboardComponent,
     ExerciseModalComponent,
-    BubbleComponent
+    BubbleComponent,
+    TrainingCreatorComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { FormsModule } from '@angular/forms';
     DragDropModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     NgxsModule.forRoot([
       LayoutState,
       ExerciseState,

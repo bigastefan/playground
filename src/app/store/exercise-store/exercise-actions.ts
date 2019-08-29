@@ -5,3 +5,9 @@ export class SelectExercise {
 
   constructor(public exercise: Exercise) {}
 }
+
+export class AddExercise {
+  static readonly type = '[exercise] AddExercise';
+
+  constructor(public exercise: Exercise) {}
+}

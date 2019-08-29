@@ -1,0 +1,10 @@
+<form [formGroup]="profileForm">
+  <h3>Creator</h3>
+
+  <label>
+    Content:
+    <textarea cols="30" rows="10" formControlName="content"></textarea>
+  </label>
+  <button (click)="onSubmit()">Submit</button>
+
+</form>
