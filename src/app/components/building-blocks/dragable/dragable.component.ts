@@ -46,17 +46,17 @@ export class DragableComponent implements OnInit {
     );
   }
 
-  drop(event: CdkDragDrop<{}[]>) {
+  drop(event: CdkDragDrop<{}[]>, element: any) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      console.log('element ====> ', element);
     } else {
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
-      console.log(this.exercises);
     }
-    console.log(this.trainings);
+    // console.log(this.trainings);
   }
 
   select(itemId: number) {

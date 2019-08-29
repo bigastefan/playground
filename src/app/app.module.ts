@@ -16,6 +16,8 @@ import { LayoutState } from './store/layout-store/layout-state';
 import { ExerciseState } from './store/exercise-store/exercise-state';
 import { BubbleComponent } from './components/building-blocks/bubbles/bubble/bubble.component';
 import { BubbleState } from './store/bubble-store/bubble-state';
+import { environment } from 'src/environments/environment.prod';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,11 +32,12 @@ import { BubbleState } from './store/bubble-store/bubble-state';
     BrowserAnimationsModule,
     DragDropModule,
     AppRoutingModule,
+    FormsModule,
     NgxsModule.forRoot([
       LayoutState,
       ExerciseState,
-      BubbleState
-    ]),
+      BubbleState,
+    ], { developmentMode: !environment.production }),
     NgxsReduxDevtoolsPluginModule.forRoot()
   ],
   providers: [],

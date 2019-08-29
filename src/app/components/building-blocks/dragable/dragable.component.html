@@ -1,7 +1,7 @@
 <div class="example-container">
   <h2>Exercises</h2>
   <div cdkDropList #exercisesList="cdkDropList" [cdkDropListData]="exercises" class="example-list"
-    (cdkDropListDropped)="drop($event)">
+    (cdkDropListDropped)="drop($event, this.exercises)">
     <div class="example-box" *ngFor="let item of exercises" cdkDrag>{{item.name}}
       <button (click)='copyObject(item)'>+</button>
       <button (click)='openExerciseModal(item)'>v</button>

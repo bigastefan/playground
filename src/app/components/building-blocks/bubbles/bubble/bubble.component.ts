@@ -11,7 +11,7 @@ import { RootState } from 'src/app/store/rootstate';
 })
 export class BubbleComponent implements OnInit {
 
-  b1 = new Bubble('Bubble 1 !');
+  content: string;
 
   bubbles: Bubble[] = [];
 
@@ -24,7 +24,8 @@ export class BubbleComponent implements OnInit {
   }
 
   addBubble() {
-    this.store.dispatch(new AddBubble(this.b1));
+    const bubble = new Bubble(this.content);
+    this.store.dispatch(new AddBubble(bubble));
   }
 
   deleteBubble(bubble: Bubble) {
