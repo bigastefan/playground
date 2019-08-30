@@ -27,9 +27,12 @@ export class BubbleState {
   @Action(DeleteBubble)
   deleteBubble({ getState, patchState }: StateContext<BubbleStateModel>, { bubble }: DeleteBubble) {
     const bubbles = getState().selectedBubbles;
+    const unread = getState().unreadBubbles;
     const b = bubbles.filter((selecedBubble) => selecedBubble !== bubble);
+    const bb = unread.filter((selectedBubble) => selectedBubble !== bubble);
     patchState({
-      selectedBubbles: [...b]
+      selectedBubbles: [...b],
+      unreadBubbles: [...bb]
     });
   }
 
