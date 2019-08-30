@@ -20,6 +20,7 @@ import { environment } from 'src/environments/environment.prod';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TrainingCreatorComponent } from './components/building-blocks/training-creator/training-creator.component';
+import { QuizComponent } from './components/building-blocks/quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TrainingCreatorComponent } from './components/building-blocks/training-
     DashboardComponent,
     ExerciseModalComponent,
     BubbleComponent,
-    TrainingCreatorComponent
+    TrainingCreatorComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
