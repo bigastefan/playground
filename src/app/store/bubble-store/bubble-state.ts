@@ -1,21 +1,23 @@
 import { State, Action, StateContext } from '@ngxs/store';
 import { Bubble } from 'src/app/models/bubble';
-import { AddBubble, DeleteBubble } from './bubble-actions';
+import { AddBubble, DeleteBubble, AddToUnread, DeleteFromUnread } from './bubble-actions';
 
 export class BubbleStateModel {
   selectedBubbles: Bubble[];
+  unreadBubbles: Bubble[];
 }
 
 @State<BubbleStateModel>({
   name: 'bubble',
   defaults: {
-    selectedBubbles: []
+    selectedBubbles: [],
+    unreadBubbles: []
   }
 })
 
 export class BubbleState {
   @Action(AddBubble)
-  SelectBubble({ getState, patchState }: StateContext<BubbleStateModel>, { bubble }: AddBubble) {
+  addBubble({ getState, patchState }: StateContext<BubbleStateModel>, { bubble }: AddBubble) {
     const bubbles = getState().selectedBubbles;
     patchState({
       selectedBubbles: [...bubbles, bubble]
@@ -28,6 +30,23 @@ export class BubbleState {
     const b = bubbles.filter((selecedBubble) => selecedBubble !== bubble);
     patchState({
       selectedBubbles: [...b]
+    });
+  }
+
+  @Action(AddToUnread)
+  addToUnread({ getState, patchState }: StateContext<BubbleStateModel>, { bubble }: AddToUnread) {
+    const bubbles = getState().unreadBubbles;
+    patchState({
+      unreadBubbles: [...bubbles, bubble]
+    });
+  }
+
+  @Action(DeleteFromUnread)
+  deleteFromUnread({ getState, patchState }: StateContext<BubbleStateModel>, { bubble }: DeleteFromUnread) {
+    const bubbles = getState().unreadBubbles;
+    const b = bubbles.filter((selectedBubble) => selectedBubble !== bubble);
+    patchState({
+      unreadBubbles: [...b]
     });
   }
 

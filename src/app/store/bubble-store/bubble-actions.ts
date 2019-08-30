@@ -11,3 +11,15 @@ export class DeleteBubble {
 
   constructor(public bubble: Bubble) {}
 }
+
+export class AddToUnread {
+  static readonly type = '[bubble] AddToUnread';
+
+  constructor(public bubble: Bubble) {}
+}
+
+export class DeleteFromUnread {
+  static readonly type = '[bubble] DeleteFromUnread';
+
+  constructor(public bubble: Bubble) {}
+}

@@ -1,7 +1,7 @@
 <div>
-  <h4>Notification Center</h4>
+  <h4>Notification Center: {{unreadBubbles.length}}</h4>
   <div *ngFor="let b of bubbles">
-    <p>{{b.content}} <button (click)="deleteBubble(b)">X</button> </p>
+    <p>{{b.content}} <button (click)="deleteBubble(b)">X</button> <button (click)="openBubble(b)">OPEN</button> </p>
   </div>
   <div>
     <h5>Post Notification</h5>
