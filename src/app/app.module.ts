@@ -21,6 +21,10 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TrainingCreatorComponent } from './components/building-blocks/training-creator/training-creator.component';
 import { QuizComponent } from './components/building-blocks/quiz/quiz.component';
+import { CustomSliderComponent } from './components/building-blocks/quiz/custom-slider/custom-slider.component';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { QuestionsComponent } from './components/building-blocks/quiz/questions/questions.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +34,9 @@ import { QuizComponent } from './components/building-blocks/quiz/quiz.component'
     ExerciseModalComponent,
     BubbleComponent,
     TrainingCreatorComponent,
-    QuizComponent
+    QuizComponent,
+    CustomSliderComponent,
+    QuestionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +44,7 @@ import { QuizComponent } from './components/building-blocks/quiz/quiz.component'
     DragDropModule,
     AppRoutingModule,
     FormsModule,
+    CdkStepperModule,
     ReactiveFormsModule,
     NgxsModule.forRoot([
       LayoutState,
